@@ -17,12 +17,12 @@ This document and all associated information and source code in this repository 
 1. [Introduction](#introduction)
 2. [Marking an application as Gaze Aware](#marking-gaze-aware)
 3. [Detecting a Gaze Aware application](#detecting-gaze-aware)
-4. [Tobii-Dynavox Variation](#tobii-dynavox-variation)
-5. [Discovery of Installation](#discovery)
-6. [Invocation](#invocation)
-7. [Calibration](#calibration)
-8. [Example Implementations](#example-implementations)
-9. [Gaze Aware Products on the Market](#gaze-aware-products)
+3a. [Tobii-Dynavox Variation](#tobii-dynavox-variation)
+4. [Discovery of Installation](#discovery)
+5. [Invocation](#invocation)
+6. [Calibration](#calibration)
+7. [Example Implementations](#example-implementations)
+8. [Gaze Aware Products on the Market](#gaze-aware-products)
 
 ### 1. Introduction<a name="introduction"></a>
 
@@ -30,28 +30,28 @@ This document and all associated information and source code in this repository 
 
 ### 3. Detecting a Gaze Aware application<a name="detecting-gaze-aware"></a>
 
-### 4. Tobii-Dynavox Variation<a name="tobii-dynavox-variation"></a>
+### 3a. Tobii-Dynavox Variation<a name="tobii-dynavox-variation"></a>
 
-### 5. Discovery of Installation<a name="discovery"></a>
+### 4. Discovery of Installation<a name="discovery"></a>
 
 HKCU & HKLM registry entries
 
-### 6. Invocation<a name="invocation"></a>
+### 5. Invocation<a name="invocation"></a>
 
 URI Invocation
 
-### 7. Calibration<a name="calibration"></a>
+### 6. Calibration<a name="calibration"></a>
 
 Discovery via registry entry
 URI Invocation (eyegazecalibrate://)
 
-### 8. Example Implementations<a name="example-implementations"></a>
+### 7. Example Implementations<a name="example-implementations"></a>
 
 ToltTech.Integration.GazeAware library
 FindGazeAware sample app
 MarkedGazeAware sample app
 
-### 9. Gaze Aware Products on the Market<a name="gaze-aware-products"></a>
+### 8. Gaze Aware Products on the Market<a name="gaze-aware-products"></a>
 
 See [gaze-aware-products.md](gaze-aware-products.md) for a list of known products on the market which implement some or all of this specification.
 

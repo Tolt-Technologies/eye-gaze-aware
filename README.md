@@ -1,5 +1,7 @@
 # Gaze Aware Specification
 
+Jay Beavers, Tolt Technologies, May 2023
+
 ## Abstract
 
 ## Status of This Memo
@@ -25,3 +27,9 @@ This document and all associated information and source code in this repository 
 ### 4. Tobii-Dynavox Variation<a name="tobii-dynavox-variation"></a>
 
 ### 5. Example Implementations<a name="example-implementations"></a>
+
+#### Acknowledgements
+
+#### Contributors
+
+#### Authors' Addresses

@@ -10,7 +10,7 @@ This document describes the process by which Microsoft Windows eye gaze aware ap
 
 ## Copyright
 
-This document and all associated information and source code in this repository are licensed with the Creative Commons Zero license (CC0 1.0 Universal) which grants extensive public rights to these works, as described in the file [LICENSE](LICENSE).  All contributions to this repository are governed by [CONTRIBUTING](CONTRIBUTING.md) which includes submitting these contributions to be licensed under the same terms documented in [LICENSE}(LICENSE).
+This document and all associated information and source code in this repository are licensed with the Creative Commons Zero license (CC0 1.0 Universal) which grants extensive public rights to these works, as described in the file [LICENSE](LICENSE).  All contributions to this repository are governed by [CONTRIBUTING](CONTRIBUTING.md) which includes releasing these contributions under the same terms documented in [LICENSE}(LICENSE).
 
 ## Table of Contents
 

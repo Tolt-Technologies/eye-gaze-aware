@@ -4,7 +4,7 @@ Jay Beavers, Tolt Technologies, May 2023
 
 ## Abstract
 
-This document describes the process by which Microsoft Windows eye gaze aware applications can recognize, cooperate, and interact with each other.  As a novel technology which does not have established interoperability / sharing semantics established, additional guidelines and interaction patterns are needed to ensure a cooperative, integrated outcome for users of eye gaze systems who have multiple products different authors and companies installed in the same system.
+This document describes the process by which Microsoft Windows eye gaze aware applications can recognize, cooperate, and interact with each other.  As a novel technology which does not have established interoperability semantics established, additional guidelines and interaction patterns are needed to ensure a cooperative, integrated outcome for users of eye gaze systems who have multiple products from different authors and companies installed on the same system or device.
 
 ## Status of This Memo
 

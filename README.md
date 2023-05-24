@@ -11,8 +11,8 @@ This document and all associated information and source code in this repository 
 ## Table of Contents
 
 1. [Introduction](#introduction)
-2. [Marking Gaze Aware](#marking-gaze-aware)
-3. [Detecting Gaze Aware](#detecting-gaze-aware)
+2. [Marking an application as Gaze Aware](#marking-gaze-aware)
+3. [Detecting a Gaze Aware application](#detecting-gaze-aware)
 4. [Tobii-Dynavox Variation](#tobii-dynavox-variation)
 5. [Example Implementations](#example-implementations)
 

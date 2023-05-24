@@ -39,6 +39,8 @@ This document and all associated information and source code in this repository 
 
 ### 8. Gaze Aware Products on the Market<a name="gaze-aware-products"></a>
 
+See [gaze-aware-products.md](gaze-aware-products.md) for a list of known products on the market which implement some or all of this specification.
+
 #### Acknowledgements
 
 #### Contributors

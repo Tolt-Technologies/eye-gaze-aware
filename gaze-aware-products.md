@@ -15,7 +15,7 @@
 | --- | --- | --- | --- | --- |
 | TD Control 5 | Yes | No | ? | |
 | EasyClick    | No  | No | ? | |
-| OptiKey.     | No  | No | ? | |
+| OptiKey      | No  | No | ? | |
 
 ## Eye Gaze Applications
 

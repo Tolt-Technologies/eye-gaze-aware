@@ -17,6 +17,11 @@
 | EasyClick    | No  | No | ? | |
 | OptiKey      | No  | No | ? | |
 
+## Eye Gaze Calibration
+
+| Name | Publishes Installed | Invocable | Version | Notes |
+| TD Eye Gaze Settings | No | No | | |
+
 ## Eye Gaze Applications
 
 | Name | Marked Gaze Aware | Publishes Installed | Invocable | Version | Notes |

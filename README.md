@@ -20,8 +20,9 @@ This document and all associated information and source code in this repository 
 4. [Tobii-Dynavox Variation](#tobii-dynavox-variation)
 5. [Discovery of Installation](#discovery)
 6. [Invocation](#invocation)
-7. [Example Implementations](#example-implementations)
-8. [Gaze Aware Products on the Market](#gaze-aware-products)
+7. [Calibration](#calibration)
+8. [Example Implementations](#example-implementations)
+9. [Gaze Aware Products on the Market](#gaze-aware-products)
 
 ### 1. Introduction<a name="introduction"></a>
 
@@ -33,16 +34,36 @@ This document and all associated information and source code in this repository 
 
 ### 5. Discovery of Installation<a name="discovery"></a>
 
+HKCU & HKLM registry entries
+
 ### 6. Invocation<a name="invocation"></a>
 
-### 7. Example Implementations<a name="example-implementations"></a>
+URI Invocation
 
-### 8. Gaze Aware Products on the Market<a name="gaze-aware-products"></a>
+### 7. Calibration<a name="calibration"></a>
+
+Discovery via registry entry
+URI Invocation (eyegazecalibrate://)
+
+### 8. Example Implementations<a name="example-implementations"></a>
+
+ToltTech.Integration.GazeAware library
+FindGazeAware sample app
+MarkedGazeAware sample app
+
+### 9. Gaze Aware Products on the Market<a name="gaze-aware-products"></a>
 
 See [gaze-aware-products.md](gaze-aware-products.md) for a list of known products on the market which implement some or all of this specification.
 
 #### Acknowledgements
 
+Initial concepts for eye gaze awareness came out of the work of the Microsoft Research Enable Team & Microsoft Windows Input Team, specifically influenced by
+team members Harish Kulkarni, Jay Beavers, and Eric Badger.
+
 #### Contributors
 
+Jay Beavers, 2023
+
 #### Authors' Addresses
+
+Jay Beavers, jay@tolttechnologies.com

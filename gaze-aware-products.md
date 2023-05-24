@@ -20,6 +20,7 @@
 ## Eye Gaze Calibration
 
 | Name | Publishes Installed | Invocable | Version | Notes |
+| --- | --- | --- | --- | --- |
 | TD Eye Gaze Settings | No | No | | |
 
 ## Eye Gaze Applications

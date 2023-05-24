@@ -17,7 +17,7 @@ This document and all associated information and source code in this repository 
 1. [Introduction](#introduction)
 2. [Marking an application as Gaze Aware](#marking-gaze-aware)
 3. [Detecting a Gaze Aware application](#detecting-gaze-aware)
-3a. [Tobii-Dynavox Variation](#tobii-dynavox-variation)
+   - [Tobii-Dynavox Variation](#tobii-dynavox-variation)
 4. [Discovery of Installation](#discovery)
 5. [Invocation](#invocation)
 6. [Calibration](#calibration)
@@ -30,7 +30,7 @@ This document and all associated information and source code in this repository 
 
 ### 3. Detecting a Gaze Aware application<a name="detecting-gaze-aware"></a>
 
-### 3a. Tobii-Dynavox Variation<a name="tobii-dynavox-variation"></a>
+#### Tobii-Dynavox Variation<a name="tobii-dynavox-variation"></a>
 
 ### 4. Discovery of Installation<a name="discovery"></a>
 

@@ -25,7 +25,7 @@ This document and all associated information and source code in this repository 
 
 ### 1. Introduction<a name="introduction"></a>
 
-### 2. Marking an applications as Gaze Aware<a name="marking-gaze-aware"></a>
+### 2. Marking an application as Gaze Aware<a name="marking-gaze-aware"></a>
 
 ### 3. Detecting a Gaze Aware application<a name="detecting-gaze-aware"></a>
 

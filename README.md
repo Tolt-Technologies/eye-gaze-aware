@@ -21,6 +21,7 @@ This document and all associated information and source code in this repository 
 5. [Discovery of Installation](#discovery)
 6. [Invocation](#invocation)
 7. [Example Implementations](#example-implementations)
+8. [Gaze Aware Products on the Market](#gaze-aware-products)
 
 ### 1. Introduction<a name="introduction"></a>
 
@@ -35,6 +36,8 @@ This document and all associated information and source code in this repository 
 ### 6. Invocation<a name="invocation"></a>
 
 ### 7. Example Implementations<a name="example-implementations"></a>
+
+### 8. Gaze Aware Products on the Market<a name="gaze-aware-products"></a>
 
 #### Acknowledgements
 

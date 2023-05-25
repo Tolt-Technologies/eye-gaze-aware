@@ -18,9 +18,9 @@ This document and all associated information and source code in this repository 
 2. [Marking an application as Gaze Aware](#marking-gaze-aware)
 3. [Detecting a Gaze Aware application](#detecting-gaze-aware)
    - [Tobii-Dynavox Variation](#tobii-dynavox-variation)
-4. [Discovery of Installation](#discovery)
-5. [Invocation](#invocation)
-6. [Calibration](#calibration)
+4. [Discovery of Installed Gaze Aware Applications](#discovery)
+5. [Starting Gaze Aware Applications](#starting)
+6. [Advanced Scenarios: Calibration, Positioning, and Gaze Bar/Keyboard control](#advanced)
 7. [Example Implementations](#example-implementations)
 8. [Gaze Aware Products on the Market](#gaze-aware-products)
 
@@ -32,15 +32,15 @@ This document and all associated information and source code in this repository 
 
 #### Tobii-Dynavox Variation<a name="tobii-dynavox-variation"></a>
 
-### 4. Discovery of Installation<a name="discovery"></a>
+### 4. Discovery of Installed Gaze Aware Applications<a name="discovery"></a>
 
 HKCU & HKLM registry entries
 
-### 5. Invocation<a name="invocation"></a>
+### 5. Starting Gaze Aware Applications<a name="starting"></a>
 
 URI Invocation
 
-### 6. Calibration<a name="calibration"></a>
+### 6. Advanced Scenarios: Calibration, Positioning, and Gaze Bar/Keyboard control<a name="advanced"></a>
 
 Discovery via registry entry
 URI Invocation (eyegazecalibrate://)

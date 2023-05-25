@@ -15,37 +15,46 @@ This document and all associated information and source code in this repository 
 ## Table of Contents
 
 1. [Introduction](#introduction)
-2. [Marking an application as Gaze Aware](#marking-gaze-aware)
-3. [Detecting a Gaze Aware application](#detecting-gaze-aware)
+2. [Definitions](#definitions)
+3. [Marking an application as Gaze Aware](#marking-gaze-aware)
+4. [Detecting a Gaze Aware application](#detecting-gaze-aware)
    - [Tobii-Dynavox Variation](#tobii-dynavox-variation)
-4. [Discovery of Installed Gaze Aware Applications](#discovery)
-5. [Starting Gaze Aware Applications](#starting)
-6. [Advanced Scenarios: Calibration, Positioning, and Gaze Bar/Keyboard control](#advanced)
-7. [Example Implementations](#example-implementations)
-8. [Gaze Aware Products on the Market](#gaze-aware-products)
+5. [Discovery of Installed Gaze Aware Applications](#discovery)
+6. [Starting Gaze Aware Applications](#starting)
+7. [Advanced Scenarios: Calibration, Positioning, and Gaze Bar/Keyboard control](#advanced)
+8. [Example Implementations](#example-implementations)
+9. [Gaze Aware Products on the Market](#gaze-aware-products)
 
 ### 1. Introduction<a name="introduction"></a>
 
-### 2. Marking an application as Gaze Aware<a name="marking-gaze-aware"></a>
+### 2. Definitions<a name="definitions"></a>
+
+ - Eye Gaze Aware Application
+ - Eye Gaze Shell
+ - Eye Gaze Bar
+ - Eye Gaze Keyboard
+ - URI Invocation
+
+### 3. Marking an application as Gaze Aware<a name="marking-gaze-aware"></a>
 
  - publish appuri on window and in registry
 
-### 3. Detecting a Gaze Aware application<a name="detecting-gaze-aware"></a>
+### 4. Detecting a Gaze Aware application<a name="detecting-gaze-aware"></a>
 
 #### Tobii-Dynavox Variation<a name="tobii-dynavox-variation"></a>
 
-### 4. Discovery of Installed Gaze Aware Applications<a name="discovery"></a>
+### 5. Discovery of Installed Gaze Aware Applications<a name="discovery"></a>
 
 HKCU & HKLM registry entries
 
-### 5. Starting Gaze Aware Applications<a name="starting"></a>
+### 6. Starting Gaze Aware Applications<a name="starting"></a>
 
 URI Invocation
 
  - appuri:start
  - appuri:end
 
-### 6. Advanced Scenarios: Calibration, Positioning, and Gaze Bar/Keyboard control<a name="advanced"></a>
+### 7. Advanced Scenarios: Calibration, Positioning, and Gaze Bar/Keyboard control<a name="advanced"></a>
 
 Discovery of supported uris via registry entry
 
@@ -89,14 +98,14 @@ Status Notifications from the eye gaze system
  - appuri:keyboardbottom
  - appuri:keyboardhidden
 
-### 7. Example Implementations<a name="example-implementations"></a>
+### 8. Example Implementations<a name="example-implementations"></a>
 
 ToltTech.Integration.GazeAware library
 FindGazeAware sample app
 MarkedGazeAware sample app
 "Gaze Aware Calculator" (e.g. sample registry entries to interact with Windows Calculator)
 
-### 8. Gaze Aware Products on the Market<a name="gaze-aware-products"></a>
+### 9. Gaze Aware Products on the Market<a name="gaze-aware-products"></a>
 
 See [gaze-aware-products.md](gaze-aware-products.md) for a list of known products on the market which implement some or all of this specification.
 

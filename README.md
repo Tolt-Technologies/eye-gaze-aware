@@ -28,6 +28,8 @@ This document and all associated information and source code in this repository 
 
 ### 2. Marking an application as Gaze Aware<a name="marking-gaze-aware"></a>
 
+ - publish appuri on window and in registry
+
 ### 3. Detecting a Gaze Aware application<a name="detecting-gaze-aware"></a>
 
 #### Tobii-Dynavox Variation<a name="tobii-dynavox-variation"></a>
@@ -40,16 +42,59 @@ HKCU & HKLM registry entries
 
 URI Invocation
 
+ - appuri:start
+ - appuri:end
+
 ### 6. Advanced Scenarios: Calibration, Positioning, and Gaze Bar/Keyboard control<a name="advanced"></a>
 
-Discovery via registry entry
-URI Invocation (eyegazecalibrate://)
+Discovery of supported uris via registry entry
+
+#### URI Invocation
+
+Controlling the eye gaze system
+
+ - eyegaze:startcalibration
+ - eyegaze:endcalibration
+ 
+ - eyegaze:showpositioning
+ - eyegaze:hidepositioning
+ 
+ - eyegaze:showgazebar
+ - eyegaze:showgazebartop
+ - eyegaze:showgazebarbottom
+ - eyegaze:showgazebarright
+ - eyegaze:showgazebarleft
+ - eyegaze:hidegazebar
+ 
+ - eyegaze:showkeyboard
+ - eyegaze:showkeyboardtop
+ - eyegaze:showkeyboardbottom
+ - eyegaze:hidekeyboard
+
+Status Notifications from the eye gaze system
+
+ - appuri:calibrationstarted
+ - appuri:calibrationended
+ 
+ - appuri:positioningshowing
+ - appuri:positioninghidden
+ 
+ - appuri:gazebartop
+ - appuri:gazebarbottom
+ - appuri:gazebarright
+ - appuri:gazebarleft
+ - appuri:gazebarhidden
+ 
+ - appuri:keyboardtop
+ - appuri:keyboardbottom
+ - appuri:keyboardhidden
 
 ### 7. Example Implementations<a name="example-implementations"></a>
 
 ToltTech.Integration.GazeAware library
 FindGazeAware sample app
 MarkedGazeAware sample app
+"Gaze Aware Calculator" (e.g. sample registry entries to interact with Windows Calculator)
 
 ### 8. Gaze Aware Products on the Market<a name="gaze-aware-products"></a>
 
@@ -57,8 +102,7 @@ See [gaze-aware-products.md](gaze-aware-products.md) for a list of known product
 
 #### Acknowledgements
 
-Initial concepts for eye gaze awareness came out of the work of the Microsoft Research Enable Team & Microsoft Windows Input Team, specifically influenced by
-team members Harish Kulkarni, Jay Beavers, and Eric Badger.
+Initial concepts for eye gaze awareness came out of the work of the Microsoft Research Enable Team & Microsoft Windows Input Team.
 
 #### Contributors
 

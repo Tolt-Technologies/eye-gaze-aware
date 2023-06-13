@@ -96,7 +96,7 @@ Discovery of supported uris via registry entry
 
 #### URI Invocation
 
-Controlling the eye gaze system
+##### Controlling the eye gaze system
 
  - eyegaze:startcalibration
  - eyegaze:endcalibration
@@ -116,7 +116,7 @@ Controlling the eye gaze system
  - eyegaze:showkeyboardbottom
  - eyegaze:hidekeyboard
 
-Status Notifications from the eye gaze system
+##### Status Notifications from the eye gaze system
 
  - appuri:calibrationstarted
  - appuri:calibrationended
@@ -136,10 +136,12 @@ Status Notifications from the eye gaze system
 
 ### 8. Example Implementations<a name="example-implementations"></a>
 
+```
 ToltTech.Integration.GazeAware library
 FindGazeAware sample app
 MarkedGazeAware sample app
 "Gaze Aware Calculator" (e.g. sample registry entries to interact with Windows Calculator)
+```
 
 ### 9. Gaze Aware Products on the Market<a name="gaze-aware-products"></a>
 

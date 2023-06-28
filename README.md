@@ -63,7 +63,7 @@ URI invocation is a [technique on Microsoft Windows](https://learn.microsoft.com
 
 ### 3. Marking an application as Gaze Aware<a name="marking-gaze-aware"></a>
 
-An application is marked as Gaze Aware in two ways: at runtime via a [Window Property](https://learn.microsoft.com/en-us/windows/win32/winmsg/using-window-properties) and in the registry to add itself to a 'directory' of installed Gaze Aware applications.
+A Windows application is marked as Gaze Aware in two ways: at runtime via a [Window Property](https://learn.microsoft.com/en-us/windows/win32/winmsg/using-window-properties) and in the registry to add itself to a 'directory' of installed Gaze Aware applications.
 
 #### Gaze Aware Window Property
 
@@ -71,9 +71,36 @@ The Window Property is used to inform Gaze Shells, Bars, and Keyboards that the 
 
 #### Gaze Aware Registry Entries (e.g. Application Directory)
 
-The Gaze Aware registry entries are used to publish the fact that the Gaze Aware application is installed on this computer.  This can be used to facilitate...
+The Gaze Aware registry entries are used to publish the fact that the Gaze Aware application is installed on this computer.  This can be used to facilitate discovery of installed applications so that eye gaze shells can find, list, and launch available apps.
 
- - publish appuri on window and in registry
+Gaze Aware apps should list themselves in the registry under \Software\Classes\eyegaze\applications.  This can be under HKEY_LOCAL_MACHINE for machine-wide installations or under HKEY_CURRENT_USER for user-scope installed apps (e.g. does not need administrator permissions).  Gaze Shells should check both HKLM and HKCU registry keys to find all installed gaze aware applications.  This registry entry should contain the application's Name, Path, Icon, Description, and URL Protocol.
+
+For example, the Wix code to register Ability Drive as an installed eyegaze application is:
+
+```
+<RegistryKey Root='HKCU' Key='Software\Classes\eyegaze\applications'>
+   <RegistryKey Key='$(var.ProductName)'>
+      <RegistryValue Name='URL Protocol' Value='eyedrive' Type='string' />
+      <RegistryValue Name='Icon' Value='$(var.ExeTargetDir)Icons\mark.ico' Type='string' />
+      <RegistryValue Name='Path' Value='[#Application.exe]' Type='string' />
+      <RegistryValue Name='Name' Value='$(var.ProductName)' Type='string' />
+      <RegistryValue Name='Description' Value='$(var.Description)' Type='string' />
+   </RegistryKey>
+</RegistryKey>
+```
+
+The application should also register itself so it can be launched via URI invocation.  This enables Modern Windows Applications (e.g. packaged Windows Store apps) to be able to find and launch the application.
+
+For example, the Wix code to register a protocol handler for Ability Drive to launch using "eyedrive:" is:
+```
+<RegistryKey Root='HKCU' Key='Software\Classes\eyedrive'>
+   <RegistryValue Value='URL:Eye Drive' Type='string' />
+   <RegistryValue Name='URL Protocol' Value='' Type='string' />
+   <RegistryKey Key='shell\open\command'>
+      <RegistryValue Value='[#Application.exe]' Type='string' />						
+   </RegistryKey>
+</RegistryKey>
+```
 
 ### 4. Detecting a Gaze Aware application<a name="detecting-gaze-aware"></a>
 

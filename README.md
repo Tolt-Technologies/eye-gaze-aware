@@ -19,7 +19,7 @@ This document and all associated information and source code in this repository 
 1. [Introduction](#introduction)
 2. [Definitions](#definitions)
 3. [Marking an application as Gaze Aware](#marking-gaze-aware)
-4. [Detecting a Gaze Aware application](#detecting-gaze-aware)
+4. [Detecting a running Gaze Aware application](#detecting-gaze-aware)
    - [Tobii-Dynavox Variation](#tobii-dynavox-variation)
 5. [Discovery of Installed Gaze Aware Applications](#discovery)
 6. [Starting Gaze Aware Applications](#starting)
@@ -69,6 +69,21 @@ A Windows application is marked as Gaze Aware in two ways: at runtime via a [Win
 
 The Window Property is used to inform Gaze Shells, Bars, and Keyboards that the running application is Gaze Aware and so they should release the eye gaze camera (if it cannot be shared between multiple processes/applications) and they should hide/minimize overlay windows so as not to occlude the Gaze Aware application that does not need their input emulation services.
 
+This window property is set via User32 SetProp with string "eyegaze:aware", e.g.:
+
+``` C#
+   [DllImport("user32.dll", SetLastError = true)]
+   public static extern bool SetProp(IntPtr hWnd, string lpString, IntPtr hData);
+
+   private const string EyeGazeAware = "eyegaze:aware";
+   private static readonly IntPtr pStr = Marshal.StringToHGlobalUni(EyeGazeAware);
+
+   var hwnd = new WindowInteropHelper(window).Handle;
+   User32.SetProp(hwnd, EyeGazeAware, pStr)
+```
+
+See [examples](examples) for complete sample code in C# 
+
 #### Gaze Aware Registry Entries (e.g. Application Directory)
 
 The Gaze Aware registry entries are used to publish the fact that the Gaze Aware application is installed on this computer.  This can be used to facilitate discovery of installed applications so that eye gaze shells can find, list, and launch available apps.
@@ -77,7 +92,7 @@ Gaze Aware apps should list themselves in the registry under \Software\Classes\e
 
 For example, the Wix code to register Ability Drive as an installed eyegaze application is:
 
-```
+``` wix
 <RegistryKey Root='HKCU' Key='Software\Classes\eyegaze\applications'>
    <RegistryKey Key='$(var.ProductName)'>
       <RegistryValue Name='URL Protocol' Value='eyedrive' Type='string' />
@@ -92,27 +107,55 @@ For example, the Wix code to register Ability Drive as an installed eyegaze appl
 The application should also register itself so it can be launched via URI invocation.  This enables Modern Windows Applications (e.g. packaged Windows Store apps) to be able to find and launch the application.
 
 For example, the Wix code to register a protocol handler for Ability Drive to launch using "eyedrive:" is:
-```
+
+``` wix
 <RegistryKey Root='HKCU' Key='Software\Classes\eyedrive'>
    <RegistryValue Value='URL:Eye Drive' Type='string' />
    <RegistryValue Name='URL Protocol' Value='' Type='string' />
    <RegistryKey Key='shell\open\command'>
-      <RegistryValue Value='[#Application.exe]' Type='string' />						
+      <RegistryValue Value='[#Application.exe]' Type='string' />
    </RegistryKey>
 </RegistryKey>
 ```
 
-### 4. Detecting a Gaze Aware application<a name="detecting-gaze-aware"></a>
+### 4. Detecting a running Gaze Aware application<a name="detecting-gaze-aware"></a>
+
+Gaze Shells, Bars, and Keyboards can detect a running Gaze Aware application by searching for the appropriate Window Property on the foreground window:
+
+``` C#
+public static bool IsGazeAware()
+{
+   var foregroundWindowHwnd = User32.GetForegroundWindow();
+   if (foregroundWindowHwnd == IntPtr.Zero)
+   {
+         // The foreground window can be NULL in certain circumstances, such as when a window is losing activation.
+         return false;
+   }
+
+   var eyeGazeAware = User32.GetProp(foregroundWindowHwnd, EyeGazeAware) != IntPtr.Zero;
+
+   return tobiiGazeAware || eyeGazeAware;
+}
+```
 
 #### Tobii-Dynavox Variation<a name="tobii-dynavox-variation"></a>
 
+Tobii-Dynavox uses a slight variation on this Window Property:
+
+``` C#
+private const uint WS_TOBIIGAZEAWARE = 0x2;
+var tobiiGazeAware = (User32.GetWindowLong(foregroundWindowHwnd, User32.GWL_EXSTYLE) & WS_TOBIIGAZEAWARE) == WS_TOBIIGAZEAWARE;
+```
+
+This is needed for interoperability with TD Communicator 5 and TD Control, but is not generally recommended because it assumes that this bit of Window Style is not being used for another purpose, and this may conflict with other uses of the Window Style flag.
+
 ### 5. Discovery of Installed Gaze Aware Applications<a name="discovery"></a>
 
-HKCU & HKLM registry entries
+See section on Gaze Aware Registry Entries above (e.g. `Software\Classes\eyegaze\applications\...`)
 
 ### 6. Starting Gaze Aware Applications<a name="starting"></a>
 
-URI Invocation
+URI Invocation allows starting a gaze aware app via a similar method to opening a URL to a website.  For example, instead of opening `https://google.com`, open `eyedrive:` to launch Ability Drive.
 
  - appuri:start
  - appuri:end
@@ -175,8 +218,6 @@ MarkedGazeAware sample app
 See [gaze-aware-products.md](gaze-aware-products.md) for a list of known products on the market which implement some or all of this specification.
 
 #### References
-
-
 
 #### Acknowledgements
 

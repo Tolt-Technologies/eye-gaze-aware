@@ -82,7 +82,9 @@ This window property is set via User32 SetProp with string "eyegaze:aware", e.g.
    User32.SetProp(hwnd, EyeGazeAware, pStr)
 ```
 
-See [examples](examples) for complete sample code in C# 
+> Note: Should we set the pStr to the URL Protocol (e.g. "eyedrive") so when a gaze aware app is detected by the gaze shell, it knows the uri to send notifications to per section 7?
+
+See [examples](examples) for complete sample code in C#.
 
 #### Gaze Aware Registry Entries (e.g. Application Directory)
 
@@ -168,6 +170,8 @@ Discovery of supported uris via registry entry
 
 ##### Controlling the eye gaze system
 
+These are suggested URIs that allow a gaze aware app to interact with the gaze shell for a better overall customer experience.
+
  - eyegaze:startcalibration
  - eyegaze:endcalibration
 
@@ -187,6 +191,8 @@ Discovery of supported uris via registry entry
  - eyegaze:hidekeyboard
 
 ##### Status Notifications from the eye gaze system
+
+These are 
 
  - appuri:calibrationstarted
  - appuri:calibrationended

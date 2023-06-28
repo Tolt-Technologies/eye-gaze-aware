@@ -134,7 +134,7 @@ public static bool IsGazeAware()
 
    var eyeGazeAware = User32.GetProp(foregroundWindowHwnd, EyeGazeAware) != IntPtr.Zero;
 
-   return tobiiGazeAware || eyeGazeAware;
+   return eyeGazeAware;
 }
 ```
 
